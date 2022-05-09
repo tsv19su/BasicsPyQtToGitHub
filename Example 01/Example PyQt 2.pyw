@@ -56,6 +56,7 @@ class SystemTrayIcon(QSystemTrayIcon):
         self.dialog = MWidget()
         self.dialog.show()
 
+    # А это зачем?
     def exit(self):
         sys.exit(0)
 
