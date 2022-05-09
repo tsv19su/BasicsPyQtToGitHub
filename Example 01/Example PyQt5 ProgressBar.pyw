@@ -10,14 +10,10 @@ class MWidget(QWidget):
         self.setWindowTitle('Simple')
         self.btn = QPushButton('Start/Stop', self)
         self.btn.setGeometry(10, 10, 150, 50)
-
         self.btn.clicked.connect(self.on_btn_click)
-
         self.progress = QProgressBar(self)
         self.progress.setRange(0, 100)
-
         self.progress.setGeometry(10, 100, 200, 20)
-
         self.timer = QTimer(self)
         self._n = 0
 
@@ -38,10 +34,7 @@ class MWidget(QWidget):
 
 
 if __name__ == '__main__':
-
     app = QApplication(sys.argv)
-
     w = MWidget()
     w.show()
-
     sys.exit(app.exec_())
