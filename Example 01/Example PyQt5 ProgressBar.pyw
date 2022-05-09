@@ -1,4 +1,3 @@
-import PyQt5
 from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QProgressBar
 import sys
