@@ -1,5 +1,4 @@
 import sys
-
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QProgressBar, QSystemTrayIcon, QMenu
@@ -23,7 +22,6 @@ class MWidget(QWidget):
         self.setWindowTitle('Simple')
         self.btn = QPushButton('Start/Stop', self)
         self.btn.setGeometry(10, 10, 150, 50)
-
         self.btn.clicked.connect(self.on_btn_click)
         self.progress = Progress()
         self.progress.show()
@@ -49,17 +47,13 @@ class MWidget(QWidget):
 class SystemTrayIcon(QSystemTrayIcon):
     def __init__(self):
         super(SystemTrayIcon, self).__init__()
-
         self.menu = QMenu(None)
         exitAction = self.menu.addAction("Exit")
         self.setContextMenu(self.menu)
         self.setIcon(QIcon("periscope.png"))
         exitAction.triggered.connect(self.exit)
-
         self.setVisible(True)
-
         self.dialog = MWidget()
-
         self.dialog.show()
 
     def exit(self):
@@ -67,11 +61,8 @@ class SystemTrayIcon(QSystemTrayIcon):
 
 
 if __name__ == '__main__':
-
     app = QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(False)
-
     trayIcon = SystemTrayIcon()
     trayIcon.show()
-
     sys.exit(app.exec_())
