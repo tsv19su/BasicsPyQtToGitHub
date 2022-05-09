@@ -56,7 +56,7 @@ class Window_000(QtWidgets.QMainWindow):
 
 
 class Ui_MainWindow_001(QtWidgets.QMainWindow):
-    __version__ = 2.2
+    __version__ = 2.3
 
     def __init__(self):
         super(Ui_MainWindow_001, self).__init__()  # конструктор предка
